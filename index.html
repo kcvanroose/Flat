@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flatshare - 2 Rooms Available</title>
+    <link rel="stylesheet" href="./dist/styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Hero Section & Overview -->
+    <section class="hero-background">
+        <!-- Hero Content -->
+        <div class="hero-overlay">
+            <div class="container mx-auto px-6 py-24 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">Flatshare Available</h1>
+                <p class="text-xl md:text-2xl mb-8 text-white">2 Spacious Rooms in Elephant & Castle</p>
+                <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">Get In Touch</a>
+            </div>
+        </div>
+
+        <!-- Flat Overview -->
+        <div id="overview" class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-white">Flat Overview</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Modern Living</h3>
+                    <p class="text-white">Recently renovated 3-bedroom flat with modern amenities and stylish furnishings throughout.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Prime Location</h3>
+                    <p class="text-white">Located in the heart of the city with excellent transport links and local amenities.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Great Housemate</h3>
+                    <p class="text-white">Friendly, professional housemate who values a clean, respectful living environment.</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section id="gallery" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Photo Gallery</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <img src="images/living-room-2.jpg" alt="Living Room" class="h-64 w-full object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity gallery-img">
+                <img src="images/kitchen-1.jpg" alt="Kitchen" class="h-64 w-full object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity gallery-img">
+                <img src="images/kitchen-2.jpg" alt="Kitchen" class="h-64 w-full object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity gallery-img">
+                <img src="images/kitchen-3.jpg" alt="Kitchen" class="h-64 w-full object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity gallery-img">
+                <img src="images/bathroom.jpg" alt="Bathroom" class="h-64 w-full object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity gallery-img">
+                <img src="images/d-bedroom-1.jpg" alt="Double Bedroom" class="h-64 w-full object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity gallery-img">
+                <img src="images/d-bedroom-2.jpg" alt="Double Bedroom" class="h-64 w-full object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity gallery-img">
+                <img src="images/m-bedroom-1.jpg" alt="Master Bedroom" class="h-64 w-full object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity gallery-img">
+                <img src="images/m-bedroom-2.jpg" alt="Master Bedroom" class="h-64 w-full object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity gallery-img">
+                <img src="images/m-bedroom-3.jpg" alt="Master Bedroom" class="h-64 w-full object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity gallery-img">
+                <img src="images/outside.jpg" alt="Outside View" class="h-64 w-full object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity gallery-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Room Details -->
+    <section id="rooms" class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Available Rooms</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Room 1 -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <img src="images/d-bedroom-1.jpg" alt="Master Bedroom" class="h-48 w-full object-cover rounded-lg mb-4">
+                    <h3 class="text-2xl font-bold mb-4">Room 1 - Master Bedroom</h3>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Large double bed</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Wardrobe</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Big windows</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Chest of drawers</li>
+                    </ul>
+                    <div class="text-2xl font-bold text-blue-600">£950/month</div>
+                </div>
+
+                <!-- Room 2 -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <img src="images/m-bedroom-2.jpg" alt="Double Bedroom" class="h-48 w-full object-cover rounded-lg mb-4">
+                    <h3 class="text-2xl font-bold mb-4">Room 2 - Double Bedroom</h3>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Comfortable double bed</li>
+                        
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Wardrobe</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Lots of natural light</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Chest of drawers</li>
+                    </ul>
+                    <div class="text-2xl font-bold text-blue-600">£825/month</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Housemate -->
+    <section id="housemate" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">About Your Housemate</h2>
+            <div class="max-w-3xl mx-auto text-center">
+                <img src="images/Casey.jpg" alt="Alex Johnson" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover">
+                <h3 class="text-2xl font-semibold mb-4">Casey van Roose</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Hi! I'm Casey, a product designer working for a charity in the city. I'm clean, respectful, and enjoy a good work-life balance.
+                    I love gaming, clubbing, and the occasional movie night. Looking for like-minded flatmates who
+                    appreciate a tidy, friendly home environment. I work from home 2-3 days a week but am generally quiet during work hours.
+                </p>
+                <div class="grid md:grid-cols-3 gap-4 text-sm">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <strong>Profession:</strong><br>Product designer
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <strong>Hobbies:</strong><br>Gaming, Gyming, Partying
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <strong>Lifestyle:</strong><br>Clean, Quiet, Friendly
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Costs & Bills -->
+    <section id="costs" class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Costs & Bills</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold mb-4">What's Included</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Gas & Electricity - £80</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Water rates - £75</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> WiFi - £30</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Council tax - £150</li>
+                            
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold mb-4">Payment Terms</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center"><span class="text-blue-500 mr-2">•</span> Monthly rent due on 1st</li>
+                            <li class="flex items-center"><span class="text-blue-500 mr-2">•</span> 1 month deposit required</li>
+                            <li class="flex items-center"><span class="text-blue-500 mr-2">•</span> 1 year contract</li>
+                            <li class="flex items-center"><span class="text-blue-500 mr-2">•</span> References required</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-8 bg-blue-50 p-6 rounded-lg text-center">
+                    <h4 class="text-lg font-semibold mb-2">Total Monthly Cost</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transport & Local Area -->
+    <section id="location" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Transport & Local Area</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Transport Links</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">🚇</span> Elephant & Castle Station - 5 min walk</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">🚌</span> Multiple bus routes nearby</li>
+                        <li class="flex items-center"><span class="text-purple-500 mr-2">🚲</span> Bike lanes on main roads</li>
+                        <li class="flex items-center"><span class="text-red-500 mr-2">✈️</span> Access to multiple airports</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Local Amenities</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">🛒</span> Supermarket - 2 min walk</li>
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">🏥</span> GP Surgery - 5 min walk</li>
+                        <li class="flex items-center"><span class="text-purple-500 mr-2">🏋️</span> Gym & Pool - 3 min walk</li>
+                        <li class="flex items-center"><span class="text-orange-500 mr-2">🍕</span> Restaurants & Cafes nearby</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">🌳</span> Park - 10 min walk</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 bg-gray-100 p-6 rounded-lg">
+                <h4 class="text-lg font-semibold mb-2">Neighborhood</h4>
+                <p class="text-gray-600">
+                    Located in a dynamic and rapidly developing neighborhood that blends modern living with rich cultural diversity.
+The area offers excellent transport connections, shopping, and leisure facilities, with green spaces close by.
+Ideal for young professionals who want quick access to central London while being part of a lively and evolving community.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gradient-to-r from-blue-50 to-purple-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Get In Touch</h2>
+            <div class="max-w-2xl mx-auto text-center">
+                <p class="text-xl mb-8 text-gray-700">Interested in viewing the flat? Have questions? Get in touch!</p>
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div>
+                        <div class="bg-white bg-opacity-90 p-4 rounded-lg shadow-md">
+                            <h4 class="font-semibold mb-2 text-gray-800">Phone</h4>
+                            <p class="text-gray-600">+4479464430444</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-white bg-opacity-90 p-4 rounded-lg shadow-md">
+                            <h4 class="font-semibold mb-2 text-gray-800">Email</h4>
+                            <p class="text-gray-600">kcvanroose@gmail.com</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-white bg-opacity-90 p-4 rounded-lg shadow-md">
+                            <h4 class="font-semibold mb-2 text-gray-800">Instagram</h4>
+                            <p class="text-gray-600">@caseyvanroose</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-md">
+                    <h4 class="text-lg font-semibold mb-2 text-gray-800">Viewing Hours</h4>
+                    <p class="text-gray-600">Weekdays: 6pm - 8pm</p>
+                    <p class="text-gray-600">Weekends: 10am - 6pm</p>
+                    <p class="mt-4 text-sm text-gray-500">Please message in advance to arrange a viewing</p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-xl font-bold mb-4">Flatshare in Elephant & Castle</h3>
+            <p class="text-gray-400 mb-4">Your next home awaits</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#overview" class="text-gray-400 hover:text-white transition duration-300">Overview</a>
+                <a href="#gallery" class="text-gray-400 hover:text-white transition duration-300">Gallery</a>
+                <a href="#rooms" class="text-gray-400 hover:text-white transition duration-300">Rooms</a>
+                <a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a>
+            </div>
+            <!-- <div class="mt-6 pt-6 border-t border-gray-700">
+                <p class="text-gray-400 text-sm">&copy; 2024 Flatshare Listing. All rights reserved.</p>
+            </div> -->
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <img id="lightbox-img" src="" alt="">
+            <div class="lightbox-title"></div>
+            <div class="lightbox-nav">
+                <button class="lightbox-prev">&lt;</button>
+                <button class="lightbox-next">&gt;</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxTitle = document.querySelector('.lightbox-title');
+        const closeBtn = document.querySelector('.lightbox-close');
+        const prevBtn = document.querySelector('.lightbox-prev');
+        const nextBtn = document.querySelector('.lightbox-next');
+        const galleryImages = document.querySelectorAll('.gallery-img');
+
+        let currentImageIndex = 0;
+
+        // Open lightbox
+        galleryImages.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                currentImageIndex = index;
+                showImage();
+                lightbox.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close lightbox
+        closeBtn.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        // Navigation
+        prevBtn.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            showImage();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            showImage();
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.style.display === 'flex') {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') prevBtn.click();
+                if (e.key === 'ArrowRight') nextBtn.click();
+            }
+        });
+
+        function showImage() {
+            const currentImg = galleryImages[currentImageIndex];
+            lightboxImg.src = currentImg.src;
+            lightboxImg.alt = currentImg.alt;
+            lightboxTitle.textContent = currentImg.alt;
+        }
+
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>
