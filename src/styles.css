@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .hero-background {
-  background-image: url('../images/living-room-2.jpg');
+  background-image: url('../images/living-room-1.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
