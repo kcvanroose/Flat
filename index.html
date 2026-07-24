@@ -281,11 +281,12 @@
     <div id="lightbox" class="lightbox">
         <div class="lightbox-content">
             <span class="lightbox-close">&times;</span>
+            <div class="lightbox-counter"></div>
             <img id="lightbox-img" src="" alt="">
             <div class="lightbox-title"></div>
             <div class="lightbox-nav">
-                <button class="lightbox-prev">&lt;</button>
-                <button class="lightbox-next">&gt;</button>
+                <button class="lightbox-prev">&#8249;</button>
+                <button class="lightbox-next">&#8250;</button>
             </div>
         </div>
     </div>
@@ -295,12 +296,15 @@
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const lightboxTitle = document.querySelector('.lightbox-title');
+        const lightboxCounter = document.querySelector('.lightbox-counter');
         const closeBtn = document.querySelector('.lightbox-close');
         const prevBtn = document.querySelector('.lightbox-prev');
         const nextBtn = document.querySelector('.lightbox-next');
         const galleryImages = document.querySelectorAll('.gallery-img');
 
         let currentImageIndex = 0;
+        let touchStartX = 0;
+        let touchEndX = 0;
 
         // Open lightbox
         galleryImages.forEach((img, index) => {
@@ -315,16 +319,18 @@
         // Close lightbox
         closeBtn.addEventListener('click', closeLightbox);
         lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) closeLightbox();
+            if (e.target === lightbox || e.target.classList.contains('lightbox-content')) closeLightbox();
         });
 
         // Navigation
-        prevBtn.addEventListener('click', () => {
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
             showImage();
         });
 
-        nextBtn.addEventListener('click', () => {
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
             showImage();
         });
@@ -338,11 +344,38 @@
             }
         });
 
+        // Touch/swipe support for mobile
+        lightbox.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        lightbox.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe left - next image
+                    currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+                } else {
+                    // Swipe right - previous image
+                    currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+                }
+                showImage();
+            }
+        }
+
         function showImage() {
             const currentImg = galleryImages[currentImageIndex];
             lightboxImg.src = currentImg.src;
             lightboxImg.alt = currentImg.alt;
             lightboxTitle.textContent = currentImg.alt;
+            lightboxCounter.textContent = `${currentImageIndex + 1} / ${galleryImages.length}`;
         }
 
         function closeLightbox() {
