@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flatshare - 1 Room Available</title>
+    <meta name="description" content="Double room available in a modern 3-bedroom flatshare in Elephant & Castle, London. £825/month. Friendly housemates, great transport links.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kcvanroose.github.io/Flat/">
+    <meta property="og:title" content="Room Available in Elephant & Castle Flatshare">
+    <meta property="og:description" content="Double room in a modern 3-bedroom flat. £825/month with friendly housemates and excellent transport links.">
+    <meta property="og:image" content="https://kcvanroose.github.io/Flat/images/living-room-1.JPG">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://kcvanroose.github.io/Flat/">
+    <meta name="twitter:title" content="Room Available in Elephant & Castle Flatshare">
+    <meta name="twitter:description" content="Double room in a modern 3-bedroom flat. £825/month with friendly housemates and excellent transport links.">
+    <meta name="twitter:image" content="https://kcvanroose.github.io/Flat/images/living-room-1.JPG">
+
     <link rel="stylesheet" href="./dist/styles.css">
 </head>
 <body class="bg-white text-gray-800">
@@ -14,7 +30,15 @@
             <div class="container mx-auto px-6 py-24 text-center">
                 <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">Flatshare Available</h1>
                 <p class="text-xl md:text-2xl mb-8 text-white">1 Double Room in Elephant & Castle</p>
-                <a href="#contact" class="bg-emerald-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-emerald-700 transition duration-300 shadow-lg hover:shadow-xl">Get In Touch</a>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#contact" class="bg-emerald-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-emerald-700 transition duration-300 shadow-lg hover:shadow-xl">Get In Touch</a>
+                    <button id="shareBtn" class="bg-white/20 backdrop-blur text-white px-6 py-3 rounded-xl font-semibold hover:bg-white/30 transition duration-300 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                        </svg>
+                        Share
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -381,6 +405,62 @@
         function closeLightbox() {
             lightbox.style.display = 'none';
             document.body.style.overflow = 'auto';
+        }
+
+        // Share functionality
+        const shareBtn = document.getElementById('shareBtn');
+        const shareData = {
+            title: 'Room Available in Elephant & Castle Flatshare',
+            text: 'Double room in a modern 3-bedroom flat. £825/month with friendly housemates and excellent transport links.',
+            url: window.location.href
+        };
+
+        shareBtn.addEventListener('click', async () => {
+            if (navigator.share) {
+                try {
+                    await navigator.share(shareData);
+                } catch (err) {
+                    if (err.name !== 'AbortError') {
+                        fallbackShare();
+                    }
+                }
+            } else {
+                fallbackShare();
+            }
+        });
+
+        function fallbackShare() {
+            // Copy link to clipboard
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                showToast('Link copied to clipboard!');
+            }).catch(() => {
+                showToast('Could not copy link');
+            });
+        }
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.textContent = message;
+            toast.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #1f2937;
+                color: white;
+                padding: 12px 24px;
+                border-radius: 12px;
+                font-size: 14px;
+                font-weight: 500;
+                z-index: 9999;
+                animation: fadeInUp 0.3s ease;
+            `;
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transition = 'opacity 0.3s ease';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
         }
     </script>
 </body>

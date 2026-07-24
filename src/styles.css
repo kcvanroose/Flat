@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+/* Toast animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
 .hero-background {
   background-image: url('../images/living-room-1.JPG');
   background-size: cover;
